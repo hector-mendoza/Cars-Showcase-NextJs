@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from 'next/image'
 import { CarProps } from "@/types"
 import CustomButton from "./CustomButton"
-import { calculateCarRent } from "@/utils"
+import { calculateCarRent, generateCardImageUrl } from "@/utils"
 import CardDetails from "./CardDetails"
 
 interface CarCardProps {
@@ -36,7 +36,7 @@ const CarCard = ({ car } : CarCardProps) => {
             </p>
             <div className="relative w-full h-40 my-3 object-contain">
                 <Image 
-                    src='/hero.png'
+                    src={ generateCardImageUrl(car) }
                     fill
                     className="object-contain"
                     priority // load image first
